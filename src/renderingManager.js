@@ -78,6 +78,13 @@ export function newRenderingManager(win, environment) {
         } catch (e) {
           continue;
         }
+      }else if(w.pbjs) { // providing a legacy fallback
+        try {
+          w.pbjs.renderAd(doc, adId);
+          break;
+        } catch (e) {
+          continue;
+        }
       }
     }
   }
